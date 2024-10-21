@@ -4,9 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.stepup.dto.Product;
-import ru.stepup.dto.User;
 import ru.stepup.service.ProductService;
-import ru.stepup.service.UserService;
 
 import java.util.List;
 

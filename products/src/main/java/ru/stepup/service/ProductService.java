@@ -1,7 +1,6 @@
 package ru.stepup.service;
 
 import org.springframework.stereotype.Service;
-import ru.stepup.dto.User;
 import ru.stepup.repository.ProductDao;
 import ru.stepup.dto.Product;
 
