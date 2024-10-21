@@ -18,7 +18,15 @@ public class ProductService {
     public Product findById(Long id) {
         return productDao.findById(id).orElse(null);
     }
-    public List<Product> findByUser(User user) {
-        return productDao.findByUser(user);
+//    public List<Product> findByUser(User user) {
+//        return productDao.findByUser(user);
+//    }
+
+    public Product findByUserIdAndAccount(Long userId, String account) {
+        return productDao.findByUserIdAndAccount(userId, account);
+    }
+
+    public List<Product> findByUserId(Long userId) {
+        return productDao.findByUserId(userId);
     }
 }

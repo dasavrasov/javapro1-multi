@@ -1,2 +1,8 @@
 server:
   port: 9001
+
+integration:
+  productClient:
+    url: http://localhost:9000/products
+    connect-timeout: 1000
+    read-timeout: 30000

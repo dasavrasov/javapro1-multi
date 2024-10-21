@@ -16,6 +16,9 @@ public interface ProductDao extends JpaRepository<Product, Long>{
 
     Product findByUserAndAccount(User user, String account);
 
-    List<Product> findByUser(User user);
+//    List<Product> findByUser(User user);
 
+    Product findByUserIdAndAccount(Long userId, String account);
+
+    List<Product> findByUserId(Long userId);
 }
