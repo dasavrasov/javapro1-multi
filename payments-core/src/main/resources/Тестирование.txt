@@ -1,0 +1,51 @@
+GET http://localhost:9001/pay/products/1
+Сервис продуктов не поднят
+
+{
+    "code": "INTERNAL_SERVER_ERROR",
+    "message": "I/O error on GET request for \"http://localhost:9000/products/user/1\":
+     Connection refused: no further information : IntegrationErrorDto[
+     code=Ошибка получения продуктов, message=I/O error on GET request
+     for \"http://localhost:9000/products/user/1\": Connection refused:
+     no further information]"
+}
+
+GET http://localhost:9001/pay/products/1
+Сервис продуктов поднят
+[
+    {
+        "id": 1,
+        "account": "account1",
+        "balance": 100.00,
+        "userId": null
+    },
+    {
+        "id": 2,
+        "account": "account2",
+        "balance": 200.00,
+        "userId": null
+    }
+]
+
+GET http://localhost:9001/pay/product/1 - неверный урл
+{
+    "code": "INTERNAL_SERVER_ERROR",
+    "message": "Ошибка платежного сервиса No static resource pay/product/1."
+}
+
+
+
+
+POST http://localhost:9001/pay/execute
+Body:
+{
+  "userId": 1,
+  "account": "account2",
+  "amount": 200.00
+}
+
+Платеж успешно проведен
+{
+    "code": "INTERNAL_SERVER_ERROR",
+    "message": "Ошибка платежного сервиса Недостаточно средств на счете для оплаты"
+}
