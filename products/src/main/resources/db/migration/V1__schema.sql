@@ -3,7 +3,7 @@ CREATE TABLE users
 (
     id SERIAL PRIMARY KEY,
     username character varying(100)
-)
+);
 DROP TABLE IF EXISTS products;
 CREATE TABLE products (
                          id SERIAL PRIMARY KEY,
