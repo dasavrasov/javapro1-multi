@@ -22,13 +22,13 @@ public class PaymentController {
     }
 
     @GetMapping("/products/{userId}")
-    public ResponseEntity<?> getProducts(@PathVariable Long userId) {
+    public List<ProductDto> getProducts(@PathVariable Long userId) {
         List<ProductDto> products = productService.getProducts(userId);
-        return ResponseEntity.ok(products);
+        return products;
     }
 
     @PostMapping("/execute")
-    public ResponseEntity<?> execute(@RequestBody PaymentRequestDto paymentRequest) {
+    public String execute(@RequestBody PaymentRequestDto paymentRequest) {
         return productService.execute(paymentRequest);
     }
 

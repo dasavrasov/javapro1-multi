@@ -32,7 +32,7 @@ public class ProductService {
         return Arrays.asList(productsArray);
     }
 
-    public ResponseEntity<?> execute(PaymentRequestDto paymentRequest){
+    public String execute(PaymentRequestDto paymentRequest){
         String url = "/user?userId=" + paymentRequest.userId() + "&account=" + paymentRequest.account();
         ResponseEntity<ProductDto> response = paymentClient.getForEntity(url, ProductDto.class);
         if (response.getStatusCode() == HttpStatus.OK) {
@@ -40,7 +40,7 @@ public class ProductService {
             if (product.balance().compareTo(paymentRequest.amount()) < 0) {
                 throw new RestClientException("Недостаточно средств на счете для оплаты");
             } else {
-                return ResponseEntity.ok("Платеж успешно проведен");
+                return "Платеж успешно проведен";
             }
         } else {
             throw new IntegrationException(new IntegrationErrorDto(HttpStatus.NOT_FOUND.name(),"Нет продукта с такими данными"));
