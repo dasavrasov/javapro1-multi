@@ -1,0 +1,37 @@
+http://localhost:9000/products/user?userId=1&account=account1
+
+{
+    "id": 1,
+    "account": "account1",
+    "balance": 100.00,
+    "productType": "CARD",
+    "user": {
+        "id": 1,
+        "username": "user1"
+    }
+}
+
+http://localhost:9000/products/user?userId=1
+
+[
+    {
+        "id": 1,
+        "account": "account1",
+        "balance": 100.00,
+        "productType": "CARD",
+        "user": {
+            "id": 1,
+            "username": "user1"
+        }
+    },
+    {
+        "id": 2,
+        "account": "account2",
+        "balance": 200.00,
+        "productType": "CARD",
+        "user": {
+            "id": 1,
+            "username": "user1"
+        }
+    }
+]
